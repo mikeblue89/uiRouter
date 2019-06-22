@@ -1,7 +1,82 @@
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <a>{{vm.message}}</a>
+    <center><h2>Formulario Cursos</h2></center>
+</div>
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="col-xs-6">
+                <label for="name">{{vm.encabezados[1]}}</label>
+                <input type="text" class="form-control" id="name" ng-model = "vm.curso.name">
+            </div>
+            <div class="col-xs-6">
+                <label for="duracion">{{vm.encabezados[2]}}</label>
+                <input type="number" class="form-control"  id="duracion" ng-model = "vm.curso.duracion">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <label for="startDate">{{vm.encabezados[3]}}</label>
+                <input type="date" class="form-control" id="startDate" ng-model ="vm.curso.startDate" >
+            </div>
+            <div class="col-xs-6">
+                <label for="endDate">{{vm.encabezados[4]}}</label>
+                <input type="date" class="form-control" id="endDate" ng-model= "vm.curso.endDate">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <label for="catedratico">{{vm.encabezados[5]}}</label>
+                <input type="text" class="form-control" id="catedratico" ng-model = "vm.curso.catedratico">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <button class="btn btn-primary" id="button" ng-click="vm.saveCurso()">
+                    <span class="glyphicon glyphicon-ok-sign"></span>
+                    <span>&nbsp;Save</span>
+                </button>
+                <button class="btn btn-danger" id="button" ng-click="vm.inicializarCursos()">
+                    <span class="glyphicon glyphicon-remove-sign"></span>
+                    <span>&nbsp;Clear</span>
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <center><h1>Cursos habilitados</h1></center>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <table class="table table-condensed table-responsive">
+                    <thead>
+                        <tr>
+                            <th scope="col" ng-repeat="encabezados in vm.encabezados">{{encabezados}}</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr ng-repeat="curso in vm.cursos track by curso.id">
+                            <td>{{curso.id}}</td>
+                            <td>{{curso.name}}</td>
+                            <td>{{curso.duracion}}</td>
+                            <td>{{curso.startDate}}</td>
+                            <td>{{curso.endDate}}</td>
+                            <td>{{curso.catedratico}}</td>
+                            <td>
+                                <span type="button" class="btn btn-primary glyphicon glyphicon-edit" ng-click="vm.editCurso(curso)"></span>
+                                <span type="button" class="btn btn-danger glyphicon glyphicon-erase" ng-click="vm.deleteCurso($index)"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
         </div>
     </div>
+
 </div>

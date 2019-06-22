@@ -1,0 +1,94 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1><code>ng-init</code></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div ng-repeat ="tiposManzana in vm.canasto" ng-init="outIndex = $index">
+                <div ng-repeat = "manzana in tiposManzana" ng-init="innerIndex = $index">
+                    <span class="example-init">List [{{outIndex}}], [{{innerIndex}}] = {{manzana}};</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <h1><code>ng-repeat</code></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <table class="table table-condensed table-responsive">
+                <thead>
+                    <tr>
+                        <th scope="col" ng-repeat = "header in vm.typosHeader">{{header}}</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat = "tipos in vm.tiposPokemon"
+                        ng-class=" tipos.selected ? 'green' : tipos.color"
+                        ng-click="tipos.selected = !tipos.selected"
+                        ng-dblclick="vm.unselectTypes()"
+                        ng-class-odd="'italic'"
+                        ng-class-even="'bold'"
+                    >
+                    <td>$index: {{$index}}</td>
+                    <td>$first: {{$first}}</td>
+                    <td>$middle: {{$middle}}</td>
+                    <td>$last: {{$last}}</td>
+                    <td>$even: {{$even}}</td>
+                    <td>$odd: {{$odd}}</td>
+                    <td>Name: {{tipos.name}}</td>
+
+                    </tr>
+                </tbody>
+                
+            </table>
+        </div>
+     </div>
+
+     <div class="row">
+         <div class="col">
+             <h1><code> ng-include</code>&&<code>ng-switch</code></h1>
+             <select ng-model="vm.example" ng-options="example.name for example in vm.examples">
+                 <option value="">None</option>
+             </select>
+
+             URL: <code>{{vm.example.url}}</code>
+             <div class="slide-animate-container">
+                <div class="slide-animate" ng-include="vm.example.url"></div>
+            </div>
+
+            <div class="slide-animate-container" ng-switch on="vm.example.name">
+                <div class="slide-animate" ng-switch-when="example1.html">
+                    You have chosen Pokemon Shield.
+                </div>
+                <div class="slide-animate" ng-switch-when="example2.html">
+                    You have chosen Pokemon Sword.
+                </div>
+                <div class="slide-animate" ng-switch-default>
+                    Default option
+                </div>
+            </div>
+
+         </div>
+     </div>
+
+     <div class="row">
+         <div class="col">
+             <h1><code>ng-if</code>&&<code>ng-show</code>&&<code>ng-hide</code></h1>
+
+             <button ng-click="vm.showHide ! vm.showHide" class="btn btn-danger">Hide-Show</button>
+             <div ng-if="vm.showHide"><h2>Content inside of if</h2></div>
+             <div ng-show="vm.evaluateshowHide()"><h2>Content inside of the function </h2></div>
+             <div ng-hide="vm.showHide"><h2>Content inside of hide</h2></div>
+         </div>
+     </div>
+
+</div>

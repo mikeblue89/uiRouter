@@ -1,0 +1,91 @@
+<div class="container">
+        <center><h2>Productos</h2></center>
+    </div>
+    <div class="container">
+        <form>
+            <div class="row">
+                <div class="col-xs-6">
+                    <label for="nombreProducto">{{vm.encabezadosProductos[1]}}</label>
+                    <input type="text" class="form-control" id="nombreProducto" ng-model = "vm.producto.nombreProducto">
+                </div>
+                <div class="col-xs-6">
+                    <label for="costo">{{vm.encabezadosProductos[2]}}</label>
+                    <input type="text" class="form-control"  id="costo" ng-model = "vm.producto.costo">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <label for="proveedor">{{vm.encabezadosProductos[3]}}</label>
+                    <input type="text" class="form-control" id="proveedor" ng-model ="vm.producto.proveedor" >
+                </div>
+                <div class="col-xs-6">
+                    <label for="lote">{{vm.encabezadosProductos[4]}}</label>
+                    <input type="number" class="form-control" id="lote" ng-model= "vm.producto.lote">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="descripcion">{{vm.encabezadosProductos[5]}}</label>
+                    <input type="text" class="form-control" id="descripcion" ng-model = "vm.producto.descripcion">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="caducidad">{{vm.encabezadosProductos[6]}}</label>
+                    <input type="Date" class="form-control" id="caducidad" ng-model = "vm.producto.caducidad">
+                </div>
+            </div>
+            </br>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-primary" id="button" ng-click="vm.saveProducto()">
+                        <span class="glyphicon glyphicon-ok-sign"></span>
+                        <span>&nbsp;Save</span>
+                    </button>
+                    <button class="btn btn-danger" id="button" ng-click="vm.inicializarProductos()">
+                        <span class="glyphicon glyphicon-remove-sign"></span>
+                        <span>&nbsp;Clear</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <center><h1>Inventario de productos</h1></center>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col">
+                    <table class="table table-condensed table-responsive">
+                        <thead>
+                            <tr>
+                                <th scope="col" ng-repeat="encabezadosProductos in vm.encabezadosProductos">{{encabezadosProductos}}</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            <tr ng-repeat="producto in vm.productos">
+                                <td>{{producto.id}}</td>
+                                <td>{{producto.nombreProducto}}</td>
+                                <td>{{producto.costo}}</td>
+                                <td>{{producto.proveedor}}</td>
+                                <td>{{producto.lote}}</td>
+                                <td>{{producto.descripcion}}</td>
+                                <td>{{producto.caducidad}}</td>
+                                <td>
+                                    <span type="button" class="btn btn-primary glyphicon glyphicon-edit" ng-click="vm.editProducto(producto)"></span>
+                                    <span type="button" class="btn btn-danger glyphicon glyphicon-erase" ng-click="vm.deleteProducto($index)"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+    
+                    </table>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    

@@ -1,0 +1,91 @@
+.slide-animate-container {
+    position:relative;
+    background:white;
+    border:1px solid black;
+    height:100%;
+    overflow:hidden;
+  }
+  
+.btn-orange{
+    background-color: rgb(11, 61, 94);
+    font-family: 'Noto Sans HK', sans-serif;
+  }
+  .slide-animate {
+    padding:10px;
+  }
+  
+  .slide-animate.ng-enter, .slide-animate.ng-leave {
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  }
+
+.borde{
+  border: black 1px solid;
+}
+
+.size1{
+  width: 20%;
+  height: 606px;
+}
+
+.size2{
+  width: 45%;
+  height: 606px; 
+}
+
+.size3{
+  width: 35%;
+  height: 606px;
+}
+
+.menuColor{
+  color: black;
+}
+
+.green{
+  background-color: green;
+}
+
+.fire{
+  background-color: orange;
+}
+
+.leaf{
+  background-color:rgb(28, 241, 0);
+}
+
+.water{
+  background-color: blue;
+}
+
+.fairy{
+  background-color: rgb(216, 68, 93);
+}
+
+.ghost{
+  background-color: grey;
+}
+
+.normal{
+  background-color: red;
+}
+
+.electric{
+  background-color: yellow;
+}
+
+.navbar-default {
+  background-color: rgb(243, 53, 53);
+  border-color: rgb(243, 53, 53);
+}
+
+.navbar-default .navbar-brand {
+  color: rgb(247, 247, 247);
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: rgb(255, 255, 255);
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: rgb(255, 255, 255);
+}

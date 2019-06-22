@@ -21,10 +21,40 @@
             {
                 name: 'app.form',
                 options: {
-                    tittle: 'User form',
+                    tittle: 'Cursos',
                     url: '/form',
                     templateUrl: 'app/controller/form/form.html',
                     controller: 'formController',
+                    controllerAs: 'vm'
+                }
+            },
+            {
+                name: 'app.productos',
+                options: {
+                    tittle: 'Productos',
+                    url:'/productos',
+                    templateUrl: 'app/controller/productos/productos.html',
+                    controller: 'productosController',
+                    controllerAs: 'vm'
+                }
+            },
+            {
+                name: 'app.directivas',
+                options: {
+                    tittle: 'Directivas',
+                    url: '/directivas',
+                    templateUrl: 'app/controller/directivas/directivas.html',
+                    controller: 'directivasController',
+                    controllerAs: 'vm'
+                }
+            },
+            {
+                name: 'app.mart',
+                options: {
+                    tittle: 'Market',
+                    url: '/market',
+                    templateUrl: 'app/controller/mart/mart.html',
+                    controller: 'martController',
                     controllerAs: 'vm'
                 }
             }
