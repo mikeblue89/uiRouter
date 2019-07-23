@@ -18,7 +18,7 @@
     transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
   }
 
-.borde{
+.borde{it 
   border: black 1px solid;
 }
 
@@ -32,7 +32,6 @@
   height: 606px; 
 }
 
-.size3{
   width: 35%;
   height: 606px;
 }
@@ -74,8 +73,8 @@
 }
 
 .navbar-default {
-  background-color: rgb(243, 53, 53);
-  border-color: rgb(243, 53, 53);
+  background-color: rgb(236, 78, 78);
+  border-color: rgb(236, 78, 78);
 }
 
 .navbar-default .navbar-brand {
@@ -88,4 +87,13 @@
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: rgb(255, 255, 255);
+}
+.tamano{
+  width: 120px;
+  height: 120px;
+}
+
+.tamanoDefault{
+  width: 370px;
+  height: 370px;
 }

@@ -32,9 +32,28 @@
             <div class="row">
                 <div class="col-xs-12">
                     <label for="caducidad">{{vm.encabezadosProductos[6]}}</label>
-                    <input type="Date" class="form-control" id="caducidad" ng-model = "vm.producto.caducidad">
+                    <input type="text" class="form-control" id="caducidad" ng-model = "vm.producto.caducidad">
                 </div>
             </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="url1">{{vm.encabezadosProductos[7]}}</label>
+                    <input type="text" class="form-control" id="url1" ng-model = "vm.producto.url1">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="url2">{{vm.encabezadosProductos[8]}}</label>
+                    <input type="text" class="form-control" id="url2" ng-model = "vm.producto.url2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="url3">{{vm.encabezadosProductos[9]}}</label>
+                    <input type="text" class="form-control" id="url3" ng-model = "vm.producto.url3">
+                </div>
+            </div>
+
             </br>
             <div class="row">
                 <div class="col-xs-12">
@@ -62,7 +81,7 @@
                     <table class="table table-condensed table-responsive">
                         <thead>
                             <tr>
-                                <th scope="col" ng-repeat="encabezadosProductos in vm.encabezadosProductos">{{encabezadosProductos}}</th>
+                                <th scope="col" ng-repeat="encabezadosTabla in vm.encabezadosTabla">{{encabezadosTabla}}</th>
                             </tr>
                         </thead>
                         
@@ -74,7 +93,7 @@
                                 <td>{{producto.proveedor}}</td>
                                 <td>{{producto.lote}}</td>
                                 <td>{{producto.descripcion}}</td>
-                                <td>{{producto.caducidad}}</td>
+                                <td>{{producto.caducidad | date : "dd/MM/y"}}</td>
                                 <td>
                                     <span type="button" class="btn btn-primary glyphicon glyphicon-edit" ng-click="vm.editProducto(producto)"></span>
                                     <span type="button" class="btn btn-danger glyphicon glyphicon-erase" ng-click="vm.deleteProducto($index)"></span>

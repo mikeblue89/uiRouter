@@ -6,124 +6,87 @@
         </div>
     </div>
 
+    <div class="row" >
+        <div class="col-sm-6 col-md-4" ng-repeat = "item in vm.data">
+            <div class="thumbnail">
+                <img src="{{item.url1}}" class="img-responsive" alt="Responsive image">
+                <div class="caption">
+                <h3>{{item.nombreProducto}}</h3>
+                <p>Modelo: {{item.descripcion}}</p>
+                <p>Precio: Q{{item.costo}}</p>
+                <p><a class="btn btn-danger" role="button" ng-click ="vm.buy(item)">Buy</a> <a class="btn btn-default" role="button" ng-click="vm.selectedProduct(item)">Details</a></p>
+                </div>
+             </div>
+        </div>
+    </div>
+
     <div class="row">
+        <div class="col">
+            <center><h1>Detalles de producto</h1></center>
+        </div>
+    </div>
 
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img src="./img/ambar.jpg" alt="100%X400">
-                <div class="caption">
-                <h3>{{vm.productos[0].nombreProducto}}</h3>
-                <p>Code: {{vm.productos[0].id}}</p>
-                <p>Price: Q{{vm.productos[0].costo}}</p>
-                <p><a href="#" class="btn btn-danger" role="button">Buy</a> <a class="btn btn-default" role="button" ng-click="vm.selectedProduct(vm.productos[0].id)">Details</a></p>
+    <div class="container">
+
+        <div class="row" ng-class="vm.flag = true;">
+            <div class="col-md-3">
+                <div class="row">
+                    <img src="{{vm.url1}}" class="tamano" ng-click = "vm.changeImg(vm.url1)">
+                </div>
+                <div class="row">
+                    <img src="{{vm.url2}}" class="tamano" ng-click = "vm.changeImg(vm.url2)">
+                </div>
+                <div class="row">
+                    <img src="{{vm.url3}}" class="tamano" ng-click = "vm.changeImg(vm.url3)">
                 </div>
             </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img src="./img/rexonaMen.jpg" alt="100%X400">
-                <div class="caption">
-                <h3>{{vm.productos[1].nombreProducto}}</h3>
-                <p>Code: {{vm.productos[1].id}}</p>
-                <p>Price: Q{{vm.productos[1].costo}}</p>
-                <p><a href="#" class="btn btn-danger" role="button">Buy</a> <a href="#" class="btn btn-default" role="button">Details</a></p>
-                </div>
+            <div class="col-md-4">
+                 <img src="{{vm.default}}" class="tamanoDefault">
             </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img src="./img/cherry.jpg" alt="100%X400">
-                <div class="caption">
-                <h3>{{vm.productos[2].nombreProducto}}</h3>
-                <p>Code: {{vm.productos[2].id}}</p>
-                <p>Price: Q{{vm.productos[2].costo}}</p>
-                <p><a href="#" class="btn btn-danger" role="button">Buy</a> <a href="#" class="btn btn-default" role="button">Details</a></p>
-                </div>
+            <div class="col-md-4" class="tamano1">
+                <h3>Producto: <h5>{{vm.itemEnable.nombreProducto}}</h5></h3>
+                <h3>Precio: <h5>Q {{vm.itemEnable.costo}}</h5></h3>
+                <h3>Marca: <h5>{{vm.itemEnable.proveedor}}</h5></h3>
+                <h3>Descripcion: <h5>{{vm.itemEnable.descripcion}}</h5></h3>
+                <h3>Caducidad: <h5>{{vm.itemEnable.caducidad| date : "dd/MM/y"}}</h5></h3>
             </div>
         </div>
 
     </div>
-
-    <div class="row">
-
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="./img/coca.jpg" alt="100%X400">
-                    <div class="caption">
-                    <h3>{{vm.productos[3].nombreProducto}}</h3>
-                    <p>Code: {{vm.productos[3].id}}</p>
-                    <p>Price: Q{{vm.productos[3].costo}}</p>
-                    <p><a href="#" class="btn btn-danger" role="button">Buy</a> <a href="#" class="btn btn-default" role="button">Details</a></p>
-                    </div>
-                </div>
-            </div>
     
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="./img/duracelAAA.jpg" alt="100%X400">
-                    <div class="caption">
-                    <h3>{{vm.productos[4].nombreProducto}}</h3>
-                    <p>Code: {{vm.productos[4].id}}</p>
-                    <p>Price: Q{{vm.productos[4].costo}}</p>
-                    <p><a href="#" class="btn btn-danger" role="button">Buy</a> <a href="#" class="btn btn-default" role="button">Details</a></p>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="./img/blueIce.jpg" alt="100%X400">
-                    <div class="caption">
-                    <h3>{{vm.productos[5].nombreProducto}}</h3>
-                    <p>Code: {{vm.productos[5].id}}</p>
-                    <p>Price: Q{{vm.productos[5].costo}}</p>
-                    <p><a href="#" class="btn btn-danger" role="button">Buy</a> <a href="#" class="btn btn-default" role="button">Details</a></p>
-                    </div>
-                </div>
-            </div>
-    
-        </div>
-
-    <center><label for="details"><h1>Detalle de producto</h1></label></center>
+    </br>
     <div class="container">
         <div class="row">
-            <form class="form-vertical" role="form">
-                    <div class="row">
-                        <div class="col-md-3 borde size1">
-                                <div class="row borde">
-                                        <img src="./img/ambar.jpg" alt="50%X100" ng-click="vm.imagenes()">
-                                </div>
-                                <div class="row borde">
-                                        <img src="./img/ambarLogo.jpg" alt="50%X100" ng-click="vm.imagenes()">
-                                </div>
-                                <div class="row borde">
-                                    <img src="./img/ambar1.jpg" alt="50%X100"" ng-click="vm.imagenes()">
-                                </div>
-                        </div>
-                        <div class="col-md-4 borde size2">
-                            <img src="{{vm.imagen}" alt="100%">
-                        </div>
-                        <div class="col-md-5 borde size3">
-                            <div class="row">
-                                <h3>Code: <h4>{{vm.selectedItem.id}}</h4></h3>
-                            </div>
-                            <div class="row">
-                                <h3>Producto: <h4>{{vm.selectedItem.nombreProducto}}</h4></h3>
-                            </div>
-                            <div class="row">
-                                <h3>Descripcion: <h4>{{vm.selectedItem.descripcion}}</h4></h3>
-                            </div>
-                            <div class="row">
-                                <h3>Fecha Caducidad: <h4>{{vm.selectedItem.caducidad}}</h4></h3>
-                            </div>
-
-                        </div>
-
-                    </div>
-            </form>
-            
+            <a name="ancla"></a>
+            <div class="col">
+                <center><h1>Carrito</h1></center>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                    <table class="table table-condensed table-responsive">
+                            <thead>
+                                <tr>
+                                    <th scope="col" ng-repeat="encabezadosCompras in vm.encabezadosCompras">{{encabezadosCompras}}</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                <tr ng-repeat="compra in vm.compras track by $index">
+                                    <td>{{compra.id}}</td>
+                                    <td>{{compra.nombreProducto}}</td>
+                                    <td>{{compra.costo}}</td>
+                                    <td>{{compra.proveedor}}</td>
+                                    <td>{{compra.lote}}</td>
+                                    <td>{{compra.descripcion}}</td>
+                                    <td>{{compra.caducidad | date : "dd/MM/y"}}</td>
+                                    <td>{{compra.counter}}</td>
+                                </tr>
+                            </tbody>
+        
+                        </table>
+            </div>
         </div>
     </div>
 
