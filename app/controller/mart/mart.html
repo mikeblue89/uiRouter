@@ -14,7 +14,7 @@
                 <h3>{{item.nombreProducto}}</h3>
                 <p>Modelo: {{item.descripcion}}</p>
                 <p>Precio: Q{{item.costo}}</p>
-                <p><a class="btn btn-danger" role="button" ng-click ="vm.buy(item)">Buy</a> <a class="btn btn-default" role="button" ng-click="vm.selectedProduct(item)">Details</a></p>
+                <p><a class="btn btn-default" role="button" ng-click="vm.selectedProduct(item)">Details</a></p>
                 </div>
              </div>
         </div>
@@ -29,6 +29,13 @@
     <div class="container">
 
         <div class="row" ng-class="vm.flag = true;">
+            <div class="col-md-4" class="tamano1">
+                <h3>Producto: <h5>{{vm.itemEnable.nombreProducto}}</h5></h3>
+                <h3>Precio: <h5>Q {{vm.itemEnable.costo}}</h5></h3>
+                <h3>Marca: <h5>{{vm.itemEnable.proveedor}}</h5></h3>
+                <h3>Descripcion: <h5>{{vm.itemEnable.descripcion}}</h5></h3>
+                <h3>Caducidad: <h5>{{vm.itemEnable.caducidad| date : "dd/MM/y"}}</h5></h3>
+            </div>
             <div class="col-md-3">
                 <div class="row">
                     <img src="{{vm.url1}}" class="tamano" ng-click = "vm.changeImg(vm.url1)">
@@ -43,15 +50,12 @@
             <div class="col-md-4">
                  <img src="{{vm.default}}" class="tamanoDefault">
             </div>
-            <div class="col-md-4" class="tamano1">
-                <h3>Producto: <h5>{{vm.itemEnable.nombreProducto}}</h5></h3>
-                <h3>Precio: <h5>Q {{vm.itemEnable.costo}}</h5></h3>
-                <h3>Marca: <h5>{{vm.itemEnable.proveedor}}</h5></h3>
-                <h3>Descripcion: <h5>{{vm.itemEnable.descripcion}}</h5></h3>
-                <h3>Caducidad: <h5>{{vm.itemEnable.caducidad| date : "dd/MM/y"}}</h5></h3>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <a class="btn btn-danger btn-lg glyphicon glyphicon-shopping-cart" role="button" ng-click ="vm.buy(vm.itemEnable)">Add</a>
             </div>
         </div>
-
     </div>
     
     </br>
@@ -81,7 +85,11 @@
                                     <td>{{compra.lote}}</td>
                                     <td>{{compra.descripcion}}</td>
                                     <td>{{compra.caducidad | date : "dd/MM/y"}}</td>
-                                    <td>{{compra.counter}}</td>
+                                    <td>
+                                        <span type="button" class="btn btn-default btn-sm glyphicon glyphicon-minus" ng-click="vm.remove(compra)"></span>
+                                        {{compra.counter}}
+                                        <span type="button" class="btn btn-default btn-sm glyphicon glyphicon-plus" ng-click="vm.add(compra)"></span>
+                                    </td>
                                 </tr>
                             </tbody>
         

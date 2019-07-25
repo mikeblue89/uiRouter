@@ -64,6 +64,18 @@ moduleMart.controller('martController', function(){
         }
     }
 
+    vm.remove = (item)=>{
+        vm.compras.forEach(element => {
+            if(element.id == item.id)element.counter--;
+        });
+    }
+
+    vm.add = (item)=>{
+        vm.compras.forEach(element => {
+            if(element.id == item.id)element.counter++;
+        });
+    }
+
     defaults();
 
 });

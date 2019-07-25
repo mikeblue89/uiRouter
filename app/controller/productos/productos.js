@@ -43,7 +43,7 @@
                     vm.productos.forEach(producto => { if (producto.id == vm.producto.id) producto = vm.producto; });
                 }else{
                     vm.producto.id = randomIdProducto();
-
+                    vm.producto.counter = 0;
                     vm.productos.push(vm.producto);
                 }
 
