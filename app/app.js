@@ -57,6 +57,16 @@
                     controller: 'martController',
                     controllerAs: 'vm'
                 }
+            },
+            {
+                name: 'app.filter',
+                options: {
+                    tittle: 'Filter',
+                    url: '/filter',
+                    templateUrl: 'app/controller/filter/filter.html',
+                    controller: 'filterController',
+                    controllerAs: 'vm'
+                }
             }
         ];
 
