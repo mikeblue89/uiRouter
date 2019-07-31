@@ -1,3 +1,69 @@
 <div class="container">
     <center><h1>Filtro personas</h1></center>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <label for="nombre">Nombre</label>
+                <input type="text" ng-model="vm.data.nombre">
+            </div>
+            <div class="col-md-4">
+                    <label for="edad">Edad</label>
+                    <input type="text" ng-model="vm.data.edad">
+                </div>
+                <div class="col-md-4">
+                        <label for="genero">Genero</label>
+                        <input type="text" ng-model="vm.data.genero">
+                    </div>
+        </div>
+        </br>
+        <div class="row">
+            <div class="col-sm-2">
+                <span class="btn btn-danger glyphicon glyphicon-save" ng-click="vm.add()"> Agregar</span>
+            </div>
+            <div class="col-sm-2">
+                <label for="filtro">Filtro</label>
+                <select name="filtros" ng-model = "vm.filtro">
+                    <option selected="selected">Selecione un filtro</option>
+                    <option value="mayor">Mayores de edad</option>
+                    <option value="menor">Menores de edad</option>
+                    <option value="hombre">Hombres</option>
+                    <option value="mujer">Mujeres</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    </br>
+    </br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <table class="table table-condensed table-responsive">
+                    <thead>
+                        <tr>
+                            <th class="head">ID</th>
+                            <th class="head">Nombre</th>
+                            <th class="head">Edad</th>
+                            <th class="head">Genero</th>
+                            <th class="head">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat = "persona in vm.dataBase | mayor:vm.filtro">
+                            <td class="danger">{{persona.id}}</td>
+                            <td class="danger">{{persona.nombre}}</td>
+                            <td class="danger">{{persona.edad}}</td>
+                            <td class="danger">{{persona.genero}}</td>
+                            <td class="danger">
+                                <span type="button" class="btn btn-primary glyphicon glyphicon-edit" ng-click="vm.edit(persona)"></span>
+                                <span type="button" class="btn btn-danger glyphicon glyphicon-erase" ng-click="vm.delete($index)"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
 </div>

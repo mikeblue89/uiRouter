@@ -67,6 +67,16 @@
                     controller: 'filterController',
                     controllerAs: 'vm'
                 }
+            },
+            {
+                name: 'app.pokeApi',
+                options: {
+                    tittle: 'PokeApi',
+                    url: '/pokeApi',
+                    templateUrl: 'app/controller/pokeApi/pokeApi.html',
+                    controller: 'pokeApiController',
+                    controllerAs: 'vm'
+                }
             }
         ];
 

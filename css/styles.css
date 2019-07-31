@@ -88,6 +88,11 @@
 .navbar-default .navbar-nav > li > a:focus {
   color: rgb(255, 255, 255);
 }
+
+.head{
+  background-color: rgb(236, 78, 78); 
+}
+
 .tamano{
   width: 120px;
   height: 120px;
